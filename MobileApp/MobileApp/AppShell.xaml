@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:MobileApp.Views"
+       FlyoutBehavior="Flyout"
+       TabBarIsVisible="True"
+       xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+       x:Class="MobileApp.AppShell">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Grid BackgroundColor="Black">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image Aspect="AspectFill"
+                   Source="bgprofile.jpg"
+                   Opacity="0.8" />
+                    <Grid Padding="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="20" />
+                        </Grid.RowDefinitions>
+                        <ic:CircleImage Grid.Column="0" Grid.Row="0" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" Source="http://placekitten.com/400/300" HorizontalOptions="Center" VerticalOptions="End" />
+                        <Label Padding="0, 0, 0, 0" FontSize="14" TextColor="White" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Text="John Wick"></Label>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+   
+
+    <FlyoutItem FlyoutDisplayOptions="AsSingleItem" Title="Info" Icon="home.png">
+        <ShellSection>
+            <ShellContent ContentTemplate="{DataTemplate views:PrivacyPage}"/>
+        </ShellSection>
+    </FlyoutItem>
+
+    <FlyoutItem FlyoutDisplayOptions="AsSingleItem" Title="Settings" Icon="card.png">
+        <ShellSection>
+            <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}"/>
+        </ShellSection>
+    </FlyoutItem>
+    <TabBar FlyoutDisplayOptions="AsSingleItem">
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate views:DashboardPage}" />
+        </Tab>
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ListPage}" />
+        </Tab>
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate views:LoginPage}" />
+        </Tab>
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate views:DashboardPage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

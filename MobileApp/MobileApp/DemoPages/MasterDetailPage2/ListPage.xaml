@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage IsPresented="True" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.MasterDetailPage2.ListPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Contacts">
+
+            <ListView ItemSelected="List_ItemSelected" x:Name="list" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding Name}" Detail="{Binding Status}" />-->
+                        <ImageCell ImageSource="{Binding ImageUrl}" Text="{Binding Name}" Detail="{Binding Status}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage />
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

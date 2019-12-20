@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.App">
+    <Application.Resources>
+        <!--  Fonts  -->
+        <OnPlatform x:Key="TextRegular" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="Lato" />
+            <On Platform="Android" Value="Lato-Regular.ttf#Lato" />
+        </OnPlatform>
+
+        <OnPlatform x:Key="TextLight" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="Lato Light" />
+            <On Platform="Android" Value="Lato-Light.ttf#Lato Light" />
+        </OnPlatform>
+
+        <!--  Styles  -->
+        <Style x:Key="RegularFont" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextRegular}" />
+        </Style>
+
+        <Style x:Key="LightFont" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextLight}" />
+        </Style>
+    </Application.Resources>
+</Application>

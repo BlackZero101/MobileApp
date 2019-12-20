@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Title" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.ToolBarItemPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="clock.png" Text="New" Clicked="ToolbarItem_Clicked" Order="Primary" />
+        <ToolbarItem IconImageSource="clock.png" Text="New1" Clicked="ToolbarItem_Clicked_1" Order="Secondary" />
+        <ToolbarItem IconImageSource="clock.png" Text="New2" Clicked="ToolbarItem_Clicked_2" Order="Secondary" />
+    </ContentPage.ToolbarItems>
+
+</ContentPage>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+             x:Class="MobileApp.FormControls.DateTimePickerPage">
+
+    <StackLayout>
+        <DatePicker Date="5 Jan 2016" Format="d MMM yyyy" MinimumDate="1 Jan 2016" MaximumDate="15 Jan 2016" DateSelected="DatePicker_DateSelected" />
+        <DatePicker Date="{x:Static sys:DateTime.Today}" Format="d MMM yyyy" />
+        <TimePicker Time="13:00" />
+    </StackLayout>
+    
+</ContentPage>
